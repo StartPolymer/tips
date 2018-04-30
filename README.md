@@ -4,20 +4,25 @@
 
 ### 1. Data binding
 
-- Two-way data binding problems? For <my-element foo={{bar}}> make sure `foo` is a notifying property! ➡️ notify:true
+#### Two-way data binding problems?
 
-- Binding to a dataset attribute not working? Make sure you're using $= attribute binding! ➡️ <button data-index$=[[bar]]>
+- For `<my-element foo={{bar}}>` make sure `foo` is a notifying property! ➡️ `notify: true`
 
-### 2. Is your custom element firing an event but you can't seem to listen to it from the outside? Make sure it's bubbling!
+#### Binding to a dataset attribute not working?
 
-➡️ this.dispatchEvent(new CustomEvent('meow', {bubbles: true, composed: true}));
+- Make sure you're using `$=` attribute binding! ➡️ `<button data-index$=[[bar]]>`
+
+### 2. Is your custom element firing an event but you can't seem to listen to it from the outside?
+
+➡️ Make sure it's bubbling!
+- `this.dispatchEvent(new CustomEvent('meow', {bubbles: true, composed: true}));`
 
 ### 3. Made a pretty 💣 element but can't see it on the page? 🙀
 
 ➡️ Check your superclass methods!
-- call super() if you're in the constructor
-- and super.connectedCallback() for the connected callback
-- and don't forget about the tricky super.ready() too! Or nothing will happen.
+- call `super()` if you're in the constructor
+- and `super.connectedCallback()` for the connected callback
+- and don't forget about the tricky `super.ready()` too! Or nothing will happen.
 
 ---
 
